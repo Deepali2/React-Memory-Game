@@ -36,6 +36,7 @@ class MemoryGame extends Component {
     this.state={cards:shuffle(cards), noClick: false};
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleNewGame = this.handleNewGame.bind(this);
   }
 
  handleClick(id) {
@@ -50,6 +51,14 @@ class MemoryGame extends Component {
    });
  }
 
+ handleNewGame() {
+   let cards = this.state.cards.map(card => (
+     {...card, cardState: CardState.HIDING}
+   ));
+   cards = shuffle(cards);
+   this.setState({cards});
+ }
+
 
   render() {
     const cards = this.state.cards.map(card => (
@@ -61,7 +70,7 @@ class MemoryGame extends Component {
     ));
     return (
       <div className="App">
-        <NavBar />
+        <NavBar onNewGame={this.handleNewGame}/>
         {cards}
       </div>
     );
