@@ -1,0 +1,41 @@
+.winMessage {
+  text-align: center;   
+  animation-duration: 3s;
+  animation-name: winmessage;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  animation-direction: alternate;
+}
+
+@keyframes winmessage {
+  0% {
+    opacity: 0;
+    font-size: 0;
+    color: blue;
+    animation-timing-function: linear;
+  }
+  25% {
+    opacity: 0.25;
+    font-size: 1em;
+    color: purple;
+    animation-timing-function: linear;
+  }
+  50% {
+    opacity: 0.5;
+    font-size: 2em;
+    color: red;
+    animation-timing-function: linear;
+  }
+  75% {
+    opacity: 0.75;
+    font-size: 3em;
+    color: purple;
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 1;
+    font-size: 4em;
+    color: blue;
+    animation-timing-function: linear;
+  }
+}
