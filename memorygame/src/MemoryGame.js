@@ -64,6 +64,8 @@ class MemoryGame extends Component {
    //if there are two cards that are showing and if their background colors match then change their state to MATCHING
    if (showingCards.length === 2 && showingCards[0].backgroundColor === showingCards[1].backgroundColor) {
      cards = mapCardsState(cards, ids, CardState.MATCHING);
+     let matchingCards = cards.filter((card) => card.cardState === CardState.MATCHING);
+     if (matchingCards.length === this.state.cards.length) console.log("You WON!!!");
      //otherwise hide the cards after 1.3 seconds
    } else if(showingCards.length === 2) {
      let hidingCards = mapCardsState(cards, ids, CardState.HIDING);

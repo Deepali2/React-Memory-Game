@@ -5,9 +5,9 @@ import './NavBar.css';
 const NavBar = (props) => {
   return (
     <header>
-      <h2><a>Memory Game</a></h2>
+      <h2>Memory Game</h2>
       <nav>
-        <li><a onClick={props.onNewGame}>New Game</a></li>
+        <li onClick={props.onNewGame}>New Game </li>
       </nav>
     </header>
   );
