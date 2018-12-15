@@ -100,6 +100,7 @@ class MemoryGame extends Component {
       <div className="App">
         <NavBar onNewGame={this.handleNewGame}/>
         {cards}
+        <h5>Designed and Maintained by deepaligarg1001@gmail.com </h5>
       </div>
     );
   }
