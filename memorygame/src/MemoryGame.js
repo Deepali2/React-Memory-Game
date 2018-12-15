@@ -4,6 +4,7 @@ import Card from './Card';
 import NavBar from './NavBar';
 import shuffle from './shuffle';
 
+
 const CardState = {
   HIDING: 0,
   SHOWING: 1,
