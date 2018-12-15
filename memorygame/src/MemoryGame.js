@@ -40,16 +40,43 @@ class MemoryGame extends Component {
   }
 
  handleClick(id) {
-   this.setState(prevState => {
-     let cards = prevState.cards.map(card => (
-       card.id === id ? {
-         ...card, cardState: card.cardState === CardState.HIDING? CardState.SHOWING: CardState.HIDING
+   //define a function that will return the cards array with the cardState of some changed
+   const mapCardsState = (cards, idsToChange, newCardState) => {
+     return cards.map(card => {
+       if (idsToChange.includes(card.id)) {
+         return {...card, cardState: newCardState};
        }
-       : card
-     ));
-     return {cards};
-   });
+       return card;
+     });
+   };
+   //find the card in the cards array, that has been clicked upon 
+   const foundCard = this.state.cards.find(card => card.id === id);
+   //if the clicked upon card is one that is already showing and one that needs to remain showing then just return
+   if (this.state.noClick || foundCard.cardState !== CardState.HIDING) return;
+   let noClick = false;
+   //open up the card with the id
+   let cards = mapCardsState(this.state.cards, [id], CardState.SHOWING);
+   //make an array of all the cards that are SHOWING
+   const showingCards = cards.filter((card) => card.cardState === CardState.SHOWING);
+   //make an array of the ids of all the cards that are SHOWING
+   const ids = showingCards.map(card => card.id);
+   //if there are two cards that are showing and if their background colors match then change their state to MATCHING
+   if (showingCards.length === 2 && showingCards[0].backgroundColor === showingCards[1].backgroundColor) {
+     cards = mapCardsState(cards, ids, CardState.MATCHING);
+     //otherwise hide the cards after 1.3 seconds
+   } else if(showingCards.length === 2) {
+     let hidingCards = mapCardsState(cards, ids, CardState.HIDING);
+     noClick = true;
+     this.setState({cards, noClick}, () => {
+       setTimeout(() => {
+         this.setState({cards: hidingCards, noClick: false});
+       }, 1300);
+     });
+     return;
+   }
+   this.setState({cards, noClick});
  }
+
 
  handleNewGame() {
    let cards = this.state.cards.map(card => (
