@@ -39,6 +39,23 @@ class MemoryGame extends Component {
       {id: 13, cardState: CardState.HIDING, backgroundColor: 'purple', cardText: CardText.FIND},
       {id: 14, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
       {id: 15, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
+
+      {id: 16, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
+      {id: 17, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
+      {id: 18, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
+      {id: 19, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
+      {id: 20, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
+      {id: 21, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
+      {id: 22, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
+      {id: 23, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
+      {id: 24, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
+      {id: 25, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
+      {id: 26, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
+      {id: 27, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
+      {id: 28, cardState: CardState.HIDING, backgroundColor: 'SlateBlue', cardText: CardText.FIND},
+      {id: 29, cardState: CardState.HIDING, backgroundColor: 'SlateBlue' , cardText: CardText.FIND},
+      {id: 30, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
+      {id: 31, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
     ];
     
     this.state={cards:shuffle(cards), noClick: false, winMessage:''};
