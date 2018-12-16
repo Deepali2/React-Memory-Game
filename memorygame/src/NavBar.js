@@ -7,12 +7,11 @@ const NavBar = (props) => {
     <header>
       <h2>Memory Game</h2>
       <nav>
-        <li>Easy</li>
-        <li>Medium</li>
-        <li>Hard</li>
-        <li>SuperHard</li>
-        <li>Penultimate</li>
-        <li onClick={props.onNewGame}>New Game </li>
+        <li><button type='button' onClick={props.easyGame}>Easy</button></li>
+        <li><button type='button' onClick={props.mediumGame}>Medium</button></li>
+        <li><button type='button' onClick={props.hardGame}>Hard</button></li>
+        <li><button type='button' onClick={props.superhardGame}>SuperHard</button></li>
+        <li><button type='button' onClick={props.ultimateGame}>Ultimate</button></li>        
       </nav>
     </header>
   );

@@ -3,7 +3,6 @@ import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = (props) => {
-  console.log(props);
   let style = {};
   if (props.showing) {
     style.backgroundColor = props.backgroundColor;

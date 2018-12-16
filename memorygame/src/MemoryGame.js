@@ -16,52 +16,66 @@ const CardText = {
   FIND: 'Find My Match',
   SHOW: 'SHOWING',
   MATCH: 'MATCH FOUND!'
-}
+};
+
+const Level = {
+  EASY: [2, 3, 4, 5],
+  MEDIUM: [0, 1, 2, 3, 4, 5, 6, 7],
+  HARD: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  SUPERHARD: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+  ULTIMATE: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+};
+
+let cards =[
+  {id: 0, cardState: CardState.HIDING, backgroundColor: 'red', cardText: CardText.FIND},
+  {id: 1, cardState: CardState.HIDING, backgroundColor: 'red', cardText: CardText.FIND},
+  {id: 2, cardState: CardState.HIDING, backgroundColor: 'green', cardText: CardText.FIND},
+  {id: 3, cardState: CardState.HIDING, backgroundColor: 'green', cardText: CardText.FIND},
+  {id: 4, cardState: CardState.HIDING, backgroundColor: 'blue', cardText: CardText.FIND},
+  {id: 5, cardState: CardState.HIDING, backgroundColor: 'blue', cardText: CardText.FIND},
+  {id: 6, cardState: CardState.HIDING, backgroundColor: 'orange', cardText: CardText.FIND},
+  {id: 7, cardState: CardState.HIDING, backgroundColor: 'orange', cardText: CardText.FIND},
+  {id: 8, cardState: CardState.HIDING, backgroundColor: 'pink', cardText: CardText.FIND},
+  {id: 9, cardState: CardState.HIDING, backgroundColor: 'pink', cardText: CardText.FIND},
+  {id: 10, cardState: CardState.HIDING, backgroundColor: 'brown', cardText: CardText.FIND},
+  {id: 11, cardState: CardState.HIDING, backgroundColor: 'brown', cardText: CardText.FIND},
+  {id: 12, cardState: CardState.HIDING, backgroundColor: 'purple', cardText: CardText.FIND},
+  {id: 13, cardState: CardState.HIDING, backgroundColor: 'purple', cardText: CardText.FIND},
+  {id: 14, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
+  {id: 15, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
+
+  {id: 16, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
+  {id: 17, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
+  {id: 18, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
+  {id: 19, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
+  {id: 20, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
+  {id: 21, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
+  {id: 22, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
+  {id: 23, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
+  {id: 24, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
+  {id: 25, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
+  {id: 26, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
+  {id: 27, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
+  {id: 28, cardState: CardState.HIDING, backgroundColor: 'SlateBlue', cardText: CardText.FIND},
+  {id: 29, cardState: CardState.HIDING, backgroundColor: 'SlateBlue' , cardText: CardText.FIND},
+  {id: 30, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
+  {id: 31, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
+]; 
+
 
 class MemoryGame extends Component {
   constructor(props) {
-    super(props);
-   
-    let cards =[
-      {id: 0, cardState: CardState.HIDING, backgroundColor: 'red', cardText: CardText.FIND},
-      {id: 1, cardState: CardState.HIDING, backgroundColor: 'red', cardText: CardText.FIND},
-      {id: 2, cardState: CardState.HIDING, backgroundColor: 'green', cardText: CardText.FIND},
-      {id: 3, cardState: CardState.HIDING, backgroundColor: 'green', cardText: CardText.FIND},
-      {id: 4, cardState: CardState.HIDING, backgroundColor: 'blue', cardText: CardText.FIND},
-      {id: 5, cardState: CardState.HIDING, backgroundColor: 'blue', cardText: CardText.FIND},
-      {id: 6, cardState: CardState.HIDING, backgroundColor: 'orange', cardText: CardText.FIND},
-      {id: 7, cardState: CardState.HIDING, backgroundColor: 'orange', cardText: CardText.FIND},
-      {id: 8, cardState: CardState.HIDING, backgroundColor: 'pink', cardText: CardText.FIND},
-      {id: 9, cardState: CardState.HIDING, backgroundColor: 'pink', cardText: CardText.FIND},
-      {id: 10, cardState: CardState.HIDING, backgroundColor: 'brown', cardText: CardText.FIND},
-      {id: 11, cardState: CardState.HIDING, backgroundColor: 'brown', cardText: CardText.FIND},
-      {id: 12, cardState: CardState.HIDING, backgroundColor: 'purple', cardText: CardText.FIND},
-      {id: 13, cardState: CardState.HIDING, backgroundColor: 'purple', cardText: CardText.FIND},
-      {id: 14, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
-      {id: 15, cardState: CardState.HIDING, backgroundColor: 'yellow', cardText: CardText.FIND},
+    super(props);  
+    let hardcards = this.chooseCards(cards, Level.HARD);
+    this.state={cards:shuffle(hardcards), noClick: false, winMessage:''};
 
-      {id: 16, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
-      {id: 17, cardState: CardState.HIDING, backgroundColor: 'DarkViolet', cardText: CardText.FIND},
-      {id: 18, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
-      {id: 19, cardState: CardState.HIDING, backgroundColor: 'LightCyan', cardText: CardText.FIND},
-      {id: 20, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
-      {id: 21, cardState: CardState.HIDING, backgroundColor: 'LightSeaGreen', cardText: CardText.FIND},
-      {id: 22, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
-      {id: 23, cardState: CardState.HIDING, backgroundColor: 'MediumSlateBlue', cardText: CardText.FIND},
-      {id: 24, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
-      {id: 25, cardState: CardState.HIDING, backgroundColor: 'Salmon', cardText: CardText.FIND},
-      {id: 26, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
-      {id: 27, cardState: CardState.HIDING, backgroundColor: 'Thistle', cardText: CardText.FIND},
-      {id: 28, cardState: CardState.HIDING, backgroundColor: 'SlateBlue', cardText: CardText.FIND},
-      {id: 29, cardState: CardState.HIDING, backgroundColor: 'SlateBlue' , cardText: CardText.FIND},
-      {id: 30, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
-      {id: 31, cardState: CardState.HIDING, backgroundColor: 'Olive', cardText: CardText.FIND},
-    ];
-    
-    this.state={cards:shuffle(cards), noClick: false, winMessage:''};
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleNewGame = this.handleNewGame.bind(this);
+    this.handleClick = this.handleClick.bind(this);    
+    this.handleEasyGame = this.handleEasyGame.bind(this);
+    this.handleMediumGame = this.handleMediumGame.bind(this);
+    this.handleHardGame = this.handleHardGame.bind(this);
+    this.handleSuperhardGame = this.handleSuperhardGame.bind(this);
+    this.handleUltimateGame = this.handleUltimateGame.bind(this);
+    this.chooseCards = this.chooseCards.bind(this);
   }
 
  handleClick(id) {
@@ -107,13 +121,33 @@ class MemoryGame extends Component {
    this.setState({cards, noClick});
  }
 
+ chooseCards(cards, ids) {
+  return cards.filter(card => ids.includes(card.id));
+ }
 
- handleNewGame() {
-   let cards = this.state.cards.map(card => (
-     {...card, cardState: CardState.HIDING}
-   ));
-   cards = shuffle(cards);
-   this.setState({cards, winMessage:'', noClick: false});
+ handleEasyGame() {
+   let easycards = this.chooseCards(cards, Level.EASY);   
+   this.setState({cards: shuffle(easycards), noClick: false, winMessage:''});
+ }
+
+ handleMediumGame() {
+  let mediumcards = this.chooseCards(cards, Level.MEDIUM);
+  this.setState({cards: shuffle(mediumcards), noClick: false, winMessage:''});
+ }
+
+ handleHardGame() {
+  let hardcards = this.chooseCards(cards, Level.HARD);
+  this.setState({cards: shuffle(hardcards), noClick: false, winMessage:''});
+ }
+
+ handleSuperhardGame() {
+  let superhardcards = this.chooseCards(cards, Level.SUPERHARD);
+  this.setState({cards: shuffle(superhardcards), noClick: false, winMessage:''});
+ }
+
+ handleUltimateGame() {
+  let ultimatecards = this.chooseCards(cards, Level.ULTIMATE);
+  this.setState({cards: shuffle(ultimatecards), noClick: false, winMessage:''});
  }
 
 
@@ -128,7 +162,13 @@ class MemoryGame extends Component {
     ));
     return (
       <div className="App">
-        <NavBar onNewGame={this.handleNewGame}/>
+        <NavBar 
+          easyGame={this.handleEasyGame}
+          mediumGame={this.handleMediumGame}
+          hardGame={this.handleHardGame}
+          superhardGame={this.handleSuperhardGame}
+          ultimateGame={this.handleUltimateGame}          
+        />
         <WinMessage winMessage={this.state.winMessage}/>
         {cards}
         <h5>Designed and Maintained by deepaligarg1001@gmail.com </h5>
